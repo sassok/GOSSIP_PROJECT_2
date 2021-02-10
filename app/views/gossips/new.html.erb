@@ -10,14 +10,14 @@
   <% end %>
   
     <!-- ... -->
-
+    <div id= "form">
     <%= form_tag gossips_path(action: 'create'), method: "post" do %>
 
-      <%= label_tag 'Title' %>
-      <%= text_field_tag 'title', params["title"] %>
+      <p class="label"><%= label_tag 'Title :' %></p>
+      <p class="box"><%= text_field_tag 'title', params["title"] %></p>
       <br /> <br />
 
-      <%= label_tag 'Content' %>
+      <p class="label"><%= label_tag 'Content :' %></p>
       <%= text_area_tag 'content', params["content"] %>
       <br /> <br />
 
@@ -25,7 +25,7 @@
       <%= submit_tag "Create Gossip" %>
       
     <% end %>
-
+    </div>
     <!-- ... -->
 
   </body>
