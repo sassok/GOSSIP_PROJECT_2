@@ -1,0 +1,40 @@
+<% flash.each do |type, msg| %>
+  <div class="alert alert-danger" role="alert">
+    <%= msg %>
+  </div>
+<% end %>
+<h1>Page EDIT </h1>
+
+
+
+<html>
+  <body>
+  <br/>
+  <p>Title à modifier : <%= Gossip.find(params[:id]).title%></p>
+  <p>Content à modifier : <%= Gossip.find(params[:id]).content%></p>
+
+
+  
+  
+    <!-- ... -->
+    <div id= "form">
+    <%= form_tag gossip_path(action: 'update'), method: "patch" do %>
+      <p>Viens le modifier ci-dessous : </p>
+      <p class="label"><%= label_tag 'Title :' %></p>
+      <p class="box"><%= text_field_tag 'title', params["title"], placeholder: "Modifie ton title ici" %></p>
+      <br /> <br />
+
+      <p class="label"><%= label_tag 'Content :' %></p>
+      <%= text_area_tag 'content', params["content"], placeholder: "Modifie ton content ici" %>
+      <br /> <br />
+
+
+      <%= submit_tag "Update Gossip" %>
+      
+    <% end %>
+    </div>
+    <!-- ... -->
+
+  </body>
+ 
+</html>

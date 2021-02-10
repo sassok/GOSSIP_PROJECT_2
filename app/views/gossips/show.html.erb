@@ -1,3 +1,8 @@
+<% flash.each do |type, msg| %>
+  <div class="alert alert-success" role="notice">
+    <%= msg %>
+  </div>
+<% end %>
 <h1>Page Gossips </h1>
 <p>Bienvenue sur notre page Gossip No<%= params[:id] %> !! <br> T as vu comment tu veux vour ton potin ?</p>
 
@@ -9,4 +14,5 @@
   Et le gossip : <%= Gossip.find(params[:id]).content %><br/>
   </p>
 
+  <p><a href="<%= edit_gossip_path(Gossip.find(params[:id])) %>">Edit ce Gossip</a></p>
   <p>Voilà, <a href="/home/">bisou</a> !</p>

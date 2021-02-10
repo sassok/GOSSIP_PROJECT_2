@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'city/:id', to: 'city#show'
 
-  resources :gossips, only: [:new, :create]
+  resources :gossips, only: [:new, :create, :edit, :update]
   
   get 'user/:id', to: 'user#show'
   get 'gossips/:id', to: 'gossips#show'

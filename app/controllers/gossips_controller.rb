@@ -15,4 +15,16 @@ class GossipsController < ApplicationController
       flash.alert = "Try again, le Gossip n'est pas complet !!!"
     end
   end
+  
+  def update
+    @gossip = Gossip.find(params[:id])
+    if @gossip.update(title: params["title"], content: params["content"])
+      redirect_to @gossip
+      flash.notice = "Gossip bien enregistré"
+    else
+      render :edit
+      flash.alert = "Try again, le Gossip n'est pas complet !!!"
+  end
+  end
+  
 end
