@@ -1,8 +1,14 @@
 <h1>Page City </h1>
-<p>Bienvenue sur le profil de la ville de : <%= City.find(params[:id]).city %> !! <br> Check ses gossips :</p>
+<p>Bienvenue sur le profil de la ville de : <%= City.find(params[:id]).city %> !! <br> Check ses users :</p>
 
-<p>
-<% Gossip.all.each_with_index do |gossip,index| %> 
-</p>
+    
+    <% City.find(params[:id]).gossips.each do |gossip| %>
+        <%= gossip.user.first_name %><br/>
+        <%= gossip.user.last_name %><br/>
+        <%= gossip.title %><br/>
+        <%= gossip.content %><br/>
+        <% end %>
+
+
 
 <p>Voilà, <a href="/home/">bisou</a> !</p>
