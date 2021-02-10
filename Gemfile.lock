@@ -105,14 +105,10 @@ GEM
     method_source (1.0.0)
     mimemagic (0.3.5)
     mini_mime (1.0.2)
-    mini_portile2 (2.5.0)
     minitest (5.14.3)
     msgpack (1.4.2)
     nio4r (2.5.5)
-    nokogiri (1.11.1)
-      mini_portile2 (~> 2.5.0)
-      racc (~> 1.4)
-    nokogiri (1.11.1-x86_64-darwin)
+    nokogiri (1.11.1-x86_64-linux)
       racc (~> 1.4)
     popper_js (1.16.0)
     public_suffix (4.0.6)
@@ -207,7 +203,6 @@ GEM
 
 PLATFORMS
   ruby
-  x86_64-darwin-20
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
@@ -235,4 +230,4 @@ RUBY VERSION
    ruby 2.7.1p83
 
 BUNDLED WITH
-   2.2.5
+   2.1.4

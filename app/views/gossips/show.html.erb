@@ -1,0 +1,11 @@
+<h1>Page Gossips </h1>
+<p>Bienvenue sur notre page Gossip No<%= params[:id] %> !! <br> T'as vu comment Tu veux vour ton potin ?</p>
+
+<p>
+  Potin n° <%= Gossip.find(params[:id]).id %><br/>
+  Son auteur :<a href="/user/<%= Gossip.find(params[:id]).user.id%>"><%= Gossip.find(params[:id]).user.name %></a><br/>
+  Son titre :  <%= Gossip.find(params[:id]).title %><br/>
+  Et le gossip : <%= Gossip.find(params[:id]).content %><br/>
+  </p>
+
+  <p>Voilà, <a href="/home/">bisou</a> !</p>

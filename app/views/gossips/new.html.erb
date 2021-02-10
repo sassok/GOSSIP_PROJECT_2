@@ -1,0 +1,33 @@
+<h1>Page new </h1>
+
+
+<html>
+  <body>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-danger" role="alert">
+      <%= msg %>
+    </div>
+  <% end %>
+  
+    <!-- ... -->
+
+    <%= form_tag gossips_path(action: 'create'), method: "post" do %>
+
+      <%= label_tag 'Title' %>
+      <%= text_field_tag 'title', params["title"] %>
+      <br /> <br />
+
+      <%= label_tag 'Content' %>
+      <%= text_area_tag 'content', params["content"] %>
+      <br /> <br />
+
+
+      <%= submit_tag "Create Gossip" %>
+      
+    <% end %>
+
+    <!-- ... -->
+
+  </body>
+ 
+</html>
