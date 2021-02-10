@@ -1,12 +1,16 @@
-<h1>Page City </h1>
-<p>Bienvenue sur le profil de la ville de : <%= City.find(params[:id]).city %> !! <br> Check ses users :</p>
+<h1>Bienvenue sur le page de la ville de : <%= City.find(params[:id]).city %> !! <br/> Check ses Gossips :</h1>
 
     
     <% City.find(params[:id]).gossips.each do |gossip| %>
-        <%= gossip.user.first_name %><br/>
-        <%= gossip.user.last_name %><br/>
-        <%= gossip.title %><br/>
-        <%= gossip.content %><br/>
+      <div class="card w-50">
+      <div class="card-body">
+      <h5 class="card-title">First name : <%= gossip.user.first_name %><br/></h5>
+      <h5 class="card-title">Last name : <%= gossip.user.last_name %><br/></h5>
+      <p class="card-text">Titre : <%= gossip.title %><br/></p>
+      <p class="card-text">Contenu : <%= gossip.content %><br/></p>
+        
+        </div>
+        </div>  
         <% end %>
 
 
