@@ -12,7 +12,14 @@
   Sa ville : <a href="/city/<%= User.find(Gossip.find(params[:id]).user.id).city_id%>"><%= User.find(Gossip.find(params[:id]).user.id).city.city %></a><br/>
   Son titre :  <%= Gossip.find(params[:id]).title %><br/>
   Et le gossip : <%= Gossip.find(params[:id]).content %><br/>
+
+  <div id= "form">
+  <%= form_tag gossip_path(action: 'destroy'), method: "delete" do %>
+    <%= submit_tag "Delete Gossip" %> 
+    <% end %>
+    </div>
   </p>
+
 
   <p><a href="<%= edit_gossip_path(Gossip.find(params[:id])) %>">Edit ce Gossip</a></p>
   <p>Voilà, <a href="/home/">bisou</a> !</p>

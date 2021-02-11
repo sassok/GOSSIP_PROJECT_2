@@ -24,7 +24,14 @@ class GossipsController < ApplicationController
     else
       render :edit
       flash.alert = "Try again, le Gossip n'est pas complet !!!"
+    end
   end
+
+  def destroy
+    @gossip = Gossip.find(params[:id])
+    @gossip.destroy
+    redirect_to home_path
+    flash.notice = "Gossip bien effacé"
   end
   
 end
