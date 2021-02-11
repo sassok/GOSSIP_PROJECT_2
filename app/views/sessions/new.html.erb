@@ -1,0 +1,21 @@
+<html>
+<body>
+  <!-- ... -->
+  <div id= "form">
+    <%= form_tag sessions_path(action: 'create'), method: "post" do %>
+              
+      <p class="label"><%= label_tag 'Email :' %></p>
+      <%= text_field_tag 'email', params["email"]%>
+      <br />
+      <p class="label"><%= label_tag 'Password :' %></p>
+      <%= text_field_tag 'password', params["password"] %>
+      <br />
+
+      <%= submit_tag "Login" %>
+    <% end %>
+    
+  </div>
+  <!-- ... -->
+
+</body>
+</html>

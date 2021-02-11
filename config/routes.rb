@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :gossips, only: [:new, :create, :edit, :update, :destroy]  
   resources :user, only: [:new, :create, :login]
+  resources :sessions
+  get 'sessions/new', to: 'sessions#new'
   get 'user/login', to: 'user#login'
   get 'user/:id', to: 'user#show'
   get 'gossips/:id', to: 'gossips#show'
