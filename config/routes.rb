@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'city/:id', to: 'city#show'
 
   resources :gossips, only: [:new, :create, :edit, :update, :destroy]  
+  resources :user, only: [:new, :create, :login]
+  get 'user/login', to: 'user#login'
   get 'user/:id', to: 'user#show'
   get 'gossips/:id', to: 'gossips#show'
   get '/home/', to: 'home#home'

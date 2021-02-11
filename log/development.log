@@ -27697,3 +27697,1171 @@ Migrating to CreateCities (20210210110350)
   [1m[36mGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "ta mère"], ["content", "ta mère elle mets des putes"], ["user_id", 1], ["created_at", "2021-02-11 15:18:45.885771"], ["updated_at", "2021-02-11 15:18:45.885771"]]
   [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mGossip Load (0.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/user/new" for ::1 at 2021-02-11 18:36:17 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mins/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"new"}
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:5
+  Rendered user/show.html.erb within layouts/application (15.7ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=new):
+  
+app/views/user/show.html.erb:5:in `_app_views_user_show_html_erb___134252743506349937_15700'
+Started GET "/user/new" for ::1 at 2021-02-11 18:38:28 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"new"}
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:5
+  Rendered user/show.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=new):
+  
+app/views/user/show.html.erb:5:in `_app_views_user_show_html_erb___134252743506349937_16440'
+Started GET "/users/new" for ::1 at 2021-02-11 18:38:42 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/new"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/new" for ::1 at 2021-02-11 18:43:40 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/new"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/user/new" for ::1 at 2021-02-11 18:43:58 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"new"}
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:5
+  Rendered user/show.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=new):
+  
+app/views/user/show.html.erb:5:in `_app_views_user_show_html_erb___134252743506349937_18100'
+Started GET "/user/login" for ::1 at 2021-02-11 18:44:47 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"login"}
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:5
+  Rendered user/show.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/views/user/show.html.erb:5:in `_app_views_user_show_html_erb___134252743506349937_18660'
+Started GET "/user/login" for ::1 at 2021-02-11 18:44:53 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"login"}
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:5
+  Rendered user/show.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/views/user/show.html.erb:5:in `_app_views_user_show_html_erb___134252743506349937_19180'
+Started GET "/home" for ::1 at 2021-02-11 18:45:09 +0100
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/home.html.erb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:14
+  Rendered home/home.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 2191ms (Views: 2189.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/gossips/1" for ::1 at 2021-02-11 18:45:35 +0100
+Processing by GossipsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering gossips/show.html.erb within layouts/application
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:10
+  [1m[36mCACHE Gossip Load (0.0ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:11
+  [1m[36mCACHE Gossip Load (0.1ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:11
+  [1m[36mCACHE Gossip Load (0.0ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCACHE Gossip Load (0.0ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCACHE User Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCACHE Gossip Load (0.1ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:13
+  [1m[36mCACHE Gossip Load (0.0ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:14
+  [1m[36mCACHE Gossip Load (0.0ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:24
+  Rendered gossips/show.html.erb within layouts/application (66.1ms)
+Completed 200 OK in 105ms (Views: 99.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/city/1" for ::1 at 2021-02-11 18:45:42 +0100
+Processing by CityController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering city/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/city/show.html.erb:1
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/city/show.html.erb:4
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips" INNER JOIN "users" ON "gossips"."user_id" = "users"."id" WHERE "users"."city_id" = ?[0m  [["city_id", 1]]
+  ↳ app/views/city/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/city/show.html.erb:7
+  Rendered city/show.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 68ms (Views: 66.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user/new" for ::1 at 2021-02-11 18:45:53 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"new"}
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:5
+  Rendered user/show.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=new):
+  
+app/views/user/show.html.erb:5:in `_app_views_user_show_html_erb___134252743506349937_20200'
+Started GET "/user/new" for ::1 at 2021-02-11 18:50:53 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"new"}
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:5
+  Rendered user/show.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=new):
+  
+app/views/user/show.html.erb:5:in `_app_views_user_show_html_erb___134252743506349937_23540'
+Started GET "/user/new" for ::1 at 2021-02-11 18:50:54 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"new"}
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:5
+  Rendered user/show.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=new):
+  
+app/views/user/show.html.erb:5:in `_app_views_user_show_html_erb___134252743506349937_24100'
+Started GET "/user/new" for ::1 at 2021-02-11 18:52:04 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user" for ::1 at 2021-02-11 18:52:30 +0100
+Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1aOe3W9J4CvU0li+Mi2/sPQS9i6GfcajzaFE9R3DjsXUJ0KzxrCgDIiAIxJg5+9vOxilQe38GIcTY5rjL4mcGQ==", "first_name"=>"Anthony", "last_name"=>"Payan", "description"=>"hgjggd", "email"=>"anthony.payan08@outlook.fr", "age"=>"22", "password_digest"=>"[FILTERED]", "city"=>"1", "commit"=>"Create User"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "password_digest", "city_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Anthony"], ["last_name", "Payan"], ["description", "hgjggd"], ["email", "anthony.payan08@outlook.fr"], ["age", 22], ["password_digest", "coucou"], ["city_id", 1], ["created_at", "2021-02-11 17:52:30.660129"], ["updated_at", "2021-02-11 17:52:30.660129"]]
+  ↳ app/controllers/user_controller.rb:10
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:10
+Redirected to http://localhost:3000/home
+Completed 302 Found in 38ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/home" for ::1 at 2021-02-11 18:52:30 +0100
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/home.html.erb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:14
+  Rendered home/home.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/login" for ::1 at 2021-02-11 18:52:55 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/user/new" for ::1 at 2021-02-11 18:57:35 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mins/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 148ms (Views: 147.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 18:57:41 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"login"}
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:5
+  Rendered user/show.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/views/user/show.html.erb:5:in `_app_views_user_show_html_erb___2843172923864730188_16200'
+Started GET "/user/login" for ::1 at 2021-02-11 18:59:30 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"login"}
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:5
+  Rendered user/show.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/views/user/show.html.erb:5:in `_app_views_user_show_html_erb___2843172923864730188_20040'
+Started GET "/user/login" for ::1 at 2021-02-11 18:59:31 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"login"}
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:5
+  Rendered user/show.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/views/user/show.html.erb:5:in `_app_views_user_show_html_erb___2843172923864730188_20640'
+Started GET "/login" for ::1 at 2021-02-11 18:59:45 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/user/login" for ::1 at 2021-02-11 19:07:35 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"login"}
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:5
+  Rendered user/show.html.erb within layouts/application (16.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/views/user/show.html.erb:5:in `_app_views_user_show_html_erb___2843172923864730188_24780'
+Started GET "/users/login" for ::1 at 2021-02-11 19:07:57 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/login"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/home" for ::1 at 2021-02-11 19:08:07 +0100
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mGossip Load (0.8ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/home.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:14
+  Rendered home/home.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 64ms (Views: 61.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/gossips/new" for ::1 at 2021-02-11 19:08:11 +0100
+Processing by GossipsController#new as HTML
+  Rendering gossips/new.html.erb within layouts/application
+  Rendered gossips/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gossips/1" for ::1 at 2021-02-11 19:08:15 +0100
+Processing by GossipsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering gossips/show.html.erb within layouts/application
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:10
+  [1m[36mCACHE Gossip Load (0.0ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:11
+  [1m[36mCACHE Gossip Load (0.0ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:11
+  [1m[36mCACHE Gossip Load (0.0ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCACHE Gossip Load (0.1ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:12
+  [1m[36mCACHE Gossip Load (0.0ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:13
+  [1m[36mCACHE Gossip Load (0.0ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:14
+  [1m[36mCACHE Gossip Load (0.0ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gossips/show.html.erb:24
+  Rendered gossips/show.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/home" for ::1 at 2021-02-11 19:09:57 +0100
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mGossip Load (0.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/home.html.erb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:14
+  Rendered home/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/new" for ::1 at 2021-02-11 19:09:58 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2021-02-11 19:10:19 +0100
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/home.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:14
+  Rendered home/home.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user/new" for ::1 at 2021-02-11 19:10:20 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/new" for ::1 at 2021-02-11 19:10:24 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:20:27 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:21:11 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:21:42 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:22:08 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:22:25 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:23:50 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gossips/new" for ::1 at 2021-02-11 19:23:53 +0100
+Processing by GossipsController#new as HTML
+  Rendering gossips/new.html.erb within layouts/application
+  Rendered gossips/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/new" for ::1 at 2021-02-11 19:23:53 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:23:54 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:24:15 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/new" for ::1 at 2021-02-11 19:24:16 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 23ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:24:17 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:34:01 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/" for ::1 at 2021-02-11 19:36:20 +0100
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/home.html.erb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:14
+  Rendered home/home.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 63ms (Views: 60.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/user/new" for ::1 at 2021-02-11 19:41:57 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:41:59 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:42:06 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:42:10 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:50:42 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:38: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/views/user/login.html.erb:38: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/user/login" for ::1 at 2021-02-11 19:51:23 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:53:21 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:54:43 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting ')'
+....append=( input type="email" id="email" class="form-control"...
+...                             ^~
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected `class', expecting ')'
+...t type="email" id="email" class="form-control" placeholder="...
+...                          ^~~~~
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting ')'
+...lass="form-control" placeholder="Email address" required aut...
+...                    ^~~~~~~~~~~
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting ')'
+...holder="Email address" required autofocus, params["email"] )...
+...                       ^~~~~~~~
+):
+  
+app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting ')'
+app/views/user/login.html.erb:11: syntax error, unexpected `class', expecting ')'
+app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting ')'
+app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/user/login" for ::1 at 2021-02-11 19:55:20 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:56:03 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:57:29 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 19:58:36 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=t5wlz0JhDcOvjjXs2MhVyDmHqQwo%2Fslxok81zKnG9FVlhUOB2EAle%2F6k90Nn7hXAJ3u9yG6%2BrV08M7m9cDm2Ag%3D%3D" for ::1 at 2021-02-11 19:58:42 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t5wlz0JhDcOvjjXs2MhVyDmHqQwo/slxok81zKnG9FVlhUOB2EAle/6k90Nn7hXAJ3u9yG6+rV08M7m9cDm2Ag=="}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=XHL6EfM4qy0Vexk3O6jTQ4ycP0W49FDYai8n5V%2FW3iWOa5xfaRmDlURR25iEjpNLkmArgf60NPT0U6uUhimccg%3D%3D" for ::1 at 2021-02-11 19:59:43 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XHL6EfM4qy0Vexk3O6jTQ4ycP0W49FDYai8n5V/W3iWOa5xfaRmDlURR25iEjpNLkmArgf60NPT0U6uUhimccg=="}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 52ms (Views: 50.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=fvG8MxORHszWWqgOf%2FuoofRrnJ8GiR8TXvLW1%2BJB6C6s6Np9ibA2dIdwaqHA3eip6peIW0DJez%2FAjlqmO76qeQ%3D%3D" for ::1 at 2021-02-11 20:02:03 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fvG8MxORHszWWqgOf/uoofRrnJ8GiR8TXvLW1+JB6C6s6Np9ibA2dIdwaqHA3eip6peIW0DJez/AjlqmO76qeQ=="}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=fvG8MxORHszWWqgOf%2FuoofRrnJ8GiR8TXvLW1%2BJB6C6s6Np9ibA2dIdwaqHA3eip6peIW0DJez%2FAjlqmO76qeQ%3D%3D" for ::1 at 2021-02-11 20:04:37 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fvG8MxORHszWWqgOf/uoofRrnJ8GiR8TXvLW1+JB6C6s6Np9ibA2dIdwaqHA3eip6peIW0DJez/AjlqmO76qeQ=="}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 21ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=waEqzypVqLSOWgMeNIyrc4%2ByP9NO9%2B6RhTlitojvdnUTuEyBsHSADN9wwbGLqut7kU4rFwi3ir0bRe7HURA0Ig%3D%3D&email=anthony.payan08%40outlook.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:05:24 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"waEqzypVqLSOWgMeNIyrc4+yP9NO9+6RhTlitojvdnUTuEyBsHSADN9wwbGLqut7kU4rFwi3ir0bRe7HURA0Ig==", "email"=>"anthony.payan08@outlook.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=waEqzypVqLSOWgMeNIyrc4%2ByP9NO9%2B6RhTlitojvdnUTuEyBsHSADN9wwbGLqut7kU4rFwi3ir0bRe7HURA0Ig%3D%3D&email=anthony.payan08%40outlook.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:07:03 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"waEqzypVqLSOWgMeNIyrc4+yP9NO9+6RhTlitojvdnUTuEyBsHSADN9wwbGLqut7kU4rFwi3ir0bRe7HURA0Ig==", "email"=>"anthony.payan08@outlook.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 23ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2021-02-11 20:07:28 +0100
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/home.html.erb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:14
+  Rendered home/home.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 73ms (Views: 68.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 20:07:38 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login" for ::1 at 2021-02-11 20:09:21 +0100
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt%2Fmd60mcoydXj4El%2BTkboZ8QpD%2FTCEwYFqMBpVZJ%2Fg%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:09:31 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt/md60mcoydXj4El+TkboZ8QpD/TCEwYFqMBpVZJ/g==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt%2Fmd60mcoydXj4El%2BTkboZ8QpD%2FTCEwYFqMBpVZJ%2Fg%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:11:03 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt/md60mcoydXj4El+TkboZ8QpD/TCEwYFqMBpVZJ/g==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt%2Fmd60mcoydXj4El%2BTkboZ8QpD%2FTCEwYFqMBpVZJ%2Fg%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:11:49 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt/md60mcoydXj4El+TkboZ8QpD/TCEwYFqMBpVZJ/g==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt%2Fmd60mcoydXj4El%2BTkboZ8QpD%2FTCEwYFqMBpVZJ%2Fg%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:12:18 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt/md60mcoydXj4El+TkboZ8QpD/TCEwYFqMBpVZJ/g==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (101.8ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `input_tag' for #<#<Class:0x00007fc26406d8c0>:0x00007fc259e74960>):
+    12: 
+    13: 
+    14:               <div class="form-label-group">
+    15:                 <input type="password" id="password" class="form-control" placeholder="Password" required><%= input_tag 'password_digest', params["password_digest"] %></p>
+    16:               </div>
+    17: 
+    18: 
+  
+app/views/user/login.html.erb:15:in `block in _app_views_user_login_html_erb__3334711542598344565_40380'
+app/views/user/login.html.erb:9:in `_app_views_user_login_html_erb__3334711542598344565_40380'
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt%2Fmd60mcoydXj4El%2BTkboZ8QpD%2FTCEwYFqMBpVZJ%2Fg%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:12:55 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt/md60mcoydXj4El+TkboZ8QpD/TCEwYFqMBpVZJ/g==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (158.7ms)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `form_control_tag' for #<#<Class:0x00007fc26406d8c0>:0x000055b06c887fa8>):
+    12: 
+    13: 
+    14:               <div class="form-label-group">
+    15:                 <input type="password" id="password" class="form-control" placeholder="Password" required><%= form_control_tag 'password_digest', params["password_digest"] %></p>
+    16:               </div>
+    17: 
+    18: 
+  
+app/views/user/login.html.erb:15:in `block in _app_views_user_login_html_erb__3334711542598344565_41040'
+app/views/user/login.html.erb:9:in `_app_views_user_login_html_erb__3334711542598344565_41040'
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt%2Fmd60mcoydXj4El%2BTkboZ8QpD%2FTCEwYFqMBpVZJ%2Fg%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:13:34 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt/md60mcoydXj4El+TkboZ8QpD/TCEwYFqMBpVZJ/g==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt%2Fmd60mcoydXj4El%2BTkboZ8QpD%2FTCEwYFqMBpVZJ%2Fg%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:15:23 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt/md60mcoydXj4El+TkboZ8QpD/TCEwYFqMBpVZJ/g==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt%2Fmd60mcoydXj4El%2BTkboZ8QpD%2FTCEwYFqMBpVZJ%2Fg%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:15:38 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt/md60mcoydXj4El+TkboZ8QpD/TCEwYFqMBpVZJ/g==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt%2Fmd60mcoydXj4El%2BTkboZ8QpD%2FTCEwYFqMBpVZJ%2Fg%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:15:59 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3q6f03FotBt2fU0umt95E79jBGB5k2xghmovcHypC6kMt/md60mcoydXj4El+TkboZ8QpD/TCEwYFqMBpVZJ/g==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=f11OyBJKUahRCiIvS%2F5o%2BoE1hsmr0V%2FoTlzgPZ%2BVr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:16:04 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f11OyBJKUahRCiIvS/5o+oE1hsmr0V/oTlzgPZ+Vr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=f11OyBJKUahRCiIvS%2F5o%2BoE1hsmr0V%2FoTlzgPZ%2BVr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:17:25 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f11OyBJKUahRCiIvS/5o+oE1hsmr0V/oTlzgPZ+Vr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=f11OyBJKUahRCiIvS%2F5o%2BoE1hsmr0V%2FoTlzgPZ%2BVr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:19:47 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f11OyBJKUahRCiIvS/5o+oE1hsmr0V/oTlzgPZ+Vr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected '='
+...email', params["email"], class='form-control', placeholder='...
+...                              ^
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected ',', expecting `end'
+..."email"], class='form-control', placeholder='Email address',...
+...                              ^
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+...il address', required autofocus ;@output_buffer.safe_append='
+...                      ^~~~~~~~~
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:40: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/user/login.html.erb:11: syntax error, unexpected '='
+app/views/user/login.html.erb:11: syntax error, unexpected ',', expecting `end'
+app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/user/login.html.erb:40: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=f11OyBJKUahRCiIvS%2F5o%2BoE1hsmr0V%2FoTlzgPZ%2BVr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:20:12 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f11OyBJKUahRCiIvS/5o+oE1hsmr0V/oTlzgPZ+Vr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected '='
+...email', params["email"], class='form-control';@output_buffer...
+...                              ^
+):
+  
+app/views/user/login.html.erb:11: syntax error, unexpected '='
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=f11OyBJKUahRCiIvS%2F5o%2BoE1hsmr0V%2FoTlzgPZ%2BVr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:20:37 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f11OyBJKUahRCiIvS/5o+oE1hsmr0V/oTlzgPZ+Vr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected '='
+...email', params["email"], class='form-control', placeholder='...
+...                              ^
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected ',', expecting `end'
+..."email"], class='form-control', placeholder='Email address',...
+...                              ^
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+...il address', required autofocus 
+...                      ^~~~~~~~~
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:40: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/user/login.html.erb:11: syntax error, unexpected '='
+app/views/user/login.html.erb:11: syntax error, unexpected ',', expecting `end'
+app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/user/login.html.erb:40: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=f11OyBJKUahRCiIvS%2F5o%2BoE1hsmr0V%2FoTlzgPZ%2BVr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:20:50 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f11OyBJKUahRCiIvS/5o+oE1hsmr0V/oTlzgPZ+Vr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected '='
+...l', params["email"], "", class='form-control', placeholder='...
+...                              ^
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected ',', expecting `end'
+...il"], "", class='form-control', placeholder='Email address',...
+...                              ^
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+...il address', required autofocus 
+...                      ^~~~~~~~~
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:40: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/user/login.html.erb:11: syntax error, unexpected '='
+app/views/user/login.html.erb:11: syntax error, unexpected ',', expecting `end'
+app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/user/login.html.erb:40: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=f11OyBJKUahRCiIvS%2F5o%2BoE1hsmr0V%2FoTlzgPZ%2BVr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:21:23 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f11OyBJKUahRCiIvS/5o+oE1hsmr0V/oTlzgPZ+Vr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected '='
+...l', params["email"], "", class='form-control', placeholder='...
+...                              ^
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected ',', expecting ')'
+...il"], "", class='form-control', placeholder='Email address',...
+...                              ^
+/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+...il address', required autofocus );@output_buffer.safe_append...
+...                      ^~~~~~~~~
+):
+  
+app/views/user/login.html.erb:11: syntax error, unexpected '='
+app/views/user/login.html.erb:11: syntax error, unexpected ',', expecting ')'
+app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=f11OyBJKUahRCiIvS%2F5o%2BoE1hsmr0V%2FoTlzgPZ%2BVr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:21:46 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f11OyBJKUahRCiIvS/5o+oE1hsmr0V/oTlzgPZ+Vr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/mins/Bureau/3mois/10_02/GOSSIP_PROJECT_2/app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+...il address', required autofocus );@output_buffer.safe_append...
+...                      ^~~~~~~~~
+):
+  
+app/views/user/login.html.erb:11: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=f11OyBJKUahRCiIvS%2F5o%2BoE1hsmr0V%2FoTlzgPZ%2BVr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:22:08 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f11OyBJKUahRCiIvS/5o+oE1hsmr0V/oTlzgPZ+Vr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 4, expected 1..3)):
+     8:             <form class="form-signin">
+     9:             <%= form_tag user_login_path(action: 'login'), method: "post" do %>
+    10:               <div class="form-label-group">
+    11:                 <%= text_field_tag 'email', params["email"], "", class: 'form-control', placeholder: 'Email address'%>
+    12:               </div>
+    13: 
+    14:               #<div class="form-label-group">
+  
+app/views/user/login.html.erb:11:in `block in _app_views_user_login_html_erb__3334711542598344565_45200'
+app/views/user/login.html.erb:9:in `_app_views_user_login_html_erb__3334711542598344565_45200'
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=f11OyBJKUahRCiIvS%2F5o%2BoE1hsmr0V%2FoTlzgPZ%2BVr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:22:32 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f11OyBJKUahRCiIvS/5o+oE1hsmr0V/oTlzgPZ+Vr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 4, expected 1..3)):
+     8:             <form class="form-signin">
+     9:             <%= form_tag user_login_path(action: 'login'), method: "post" do %>
+    10:               <div class="form-label-group">
+    11:                 <%= text_field_tag 'email', params["email"], "", class: 'form-control'%>
+    12:               </div>
+    13: 
+    14:               #<div class="form-label-group">
+  
+app/views/user/login.html.erb:11:in `block in _app_views_user_login_html_erb__3334711542598344565_45720'
+app/views/user/login.html.erb:9:in `_app_views_user_login_html_erb__3334711542598344565_45720'
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=f11OyBJKUahRCiIvS%2F5o%2BoE1hsmr0V%2FoTlzgPZ%2BVr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:22:46 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f11OyBJKUahRCiIvS/5o+oE1hsmr0V/oTlzgPZ+Vr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=f11OyBJKUahRCiIvS%2F5o%2BoE1hsmr0V%2FoTlzgPZ%2BVr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:23:30 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f11OyBJKUahRCiIvS/5o+oE1hsmr0V/oTlzgPZ+Vr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=f11OyBJKUahRCiIvS%2F5o%2BoE1hsmr0V%2FoTlzgPZ%2BVr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:23:44 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f11OyBJKUahRCiIvS/5o+oE1hsmr0V/oTlzgPZ+Vr8StRCiGiGt5EAAg4ID02Cjyn8mSDe2RO8TQIGxMRmrtkw==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=Y3wRf4iwmViQFYvBkfg95ulsCfVeFLvUxA0O1suEOD6xZXcxEpGx4ME%2FSW4u3n3u95AdMRhU3%2FhacYKnEnt6aQ%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:24:07 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y3wRf4iwmViQFYvBkfg95ulsCfVeFLvUxA0O1suEOD6xZXcxEpGx4ME/SW4u3n3u95AdMRhU3/hacYKnEnt6aQ==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=Y3wRf4iwmViQFYvBkfg95ulsCfVeFLvUxA0O1suEOD6xZXcxEpGx4ME%2FSW4u3n3u95AdMRhU3%2FhacYKnEnt6aQ%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:26:36 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y3wRf4iwmViQFYvBkfg95ulsCfVeFLvUxA0O1suEOD6xZXcxEpGx4ME/SW4u3n3u95AdMRhU3/hacYKnEnt6aQ==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=Y3wRf4iwmViQFYvBkfg95ulsCfVeFLvUxA0O1suEOD6xZXcxEpGx4ME%2FSW4u3n3u95AdMRhU3%2FhacYKnEnt6aQ%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:27:31 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y3wRf4iwmViQFYvBkfg95ulsCfVeFLvUxA0O1suEOD6xZXcxEpGx4ME/SW4u3n3u95AdMRhU3/hacYKnEnt6aQ==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/login?utf8=%E2%9C%93&authenticity_token=3M5JknzH%2F84gnYvX0A%2F6%2FqHDtqmCCNbndXsy7jEYFjUO1y%2Fc5ubXdnG3SXhvKbr2vz%2BibcRIssvrB76f6OdUYg%3D%3D&email=antho05230%40hotmail.fr&password_digest=[FILTERED]" for ::1 at 2021-02-11 20:27:37 +0100
+Processing by UserController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3M5JknzH/84gnYvX0A/6/qHDtqmCCNbndXsy7jEYFjUO1y/c5ubXdnG3SXhvKbr2vz+ibcRIssvrB76f6OdUYg==", "email"=>"antho05230@hotmail.fr", "password_digest"=>"[FILTERED]"}
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+

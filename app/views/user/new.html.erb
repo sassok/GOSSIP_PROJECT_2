@@ -1,0 +1,54 @@
+<h1>New User </h1>
+
+
+<html>
+  <body>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-danger" role="alert">
+      <%= msg %>
+    </div>
+  <% end %>
+  
+    <!-- ... -->
+    <div id= "form">
+    <%= form_tag user_index_path(action: 'create'), method: "post" do %>
+
+      <p class="label"><%= label_tag 'First_name :' %></p>
+      <p class="box"><%= text_field_tag 'first_name', params["first_name"] %></p>
+      <br /> <br />
+
+      <p class="label"><%= label_tag 'Last_name :' %></p>
+      <p class="box"><%= text_field_tag 'last_name', params["last_name"] %></p>
+      <br /> <br />
+
+      <p class="label"><%= label_tag 'Description :' %></p>
+      <p class="box"><%= text_field_tag 'description', params["description"] %></p>
+      <br /> <br />
+
+      <p class="label"><%= label_tag 'Email :' %></p>
+      <p class="box"><%= text_field_tag 'email', params["email"] %></p>
+      <br /> <br />
+
+      <p class="label"><%= label_tag 'Age :' %></p>
+      <p class="box"><%= text_field_tag 'age', params["age"] %></p>
+      <br /> <br />
+
+      <p class="label"><%= label_tag 'Password :' %></p>
+      <p class="box"><%= text_field_tag 'password_digest', params["password_digest"] %></p>
+      <br /> <br />
+
+      <p class="label"><%= label_tag 'Ville : 1 = Lyon, 2 = Marseille, 3 = Paris' %></p>
+      <p class="label"><%= label_tag 'Veuillez saisir le chiffre de votre ville !' %></p>
+      <p class="box"><%= text_field_tag 'city', params["city"] %></p>
+    <br /> <br />
+
+
+      <%= submit_tag "Create User" %>
+
+    <% end %>
+    </div>
+    <!-- ... -->
+
+  </body>
+ 
+</html>

@@ -6,25 +6,30 @@
           <div class="card-body">
             <h5 class="card-title text-center">Sign In</h5>
             <form class="form-signin">
+            <%= form_tag user_login_path(action: 'login'), method: "post" do %>
+              
+              <p class="label"><%= label_tag 'Email :' %></p>
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <label for="inputEmail">Email address</label>
+                <%= text_field_tag 'email', params["email"], class: 'form-control'%>
               </div>
-
+              <br />
+              <p class="label"><%= label_tag 'Password :' %></p>
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <label for="inputPassword">Password</label>
+                <%= text_field_tag 'password_digest', params["password_digest"], class: 'form-control'%>
               </div>
+              <br />
+  
 
               <div class="custom-control custom-checkbox mb-3">
                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1">Remember password</label>
               </div>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+              <% end %>
+              </form>
               <hr class="my-4">
               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
               <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
-            </form>
           </div>
         </div>
       </div>
