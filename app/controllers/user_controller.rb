@@ -5,11 +5,9 @@ class UserController < ApplicationController
     end
     def login
         puts params
-        puts "Minouche est le plus beau"
     end
     def create
-        cit_maggle = City.where(city: params["city"])
-        @user = User.new(first_name: params["first_name"], last_name: params["last_name"], description: params["description"], email: params["email"],  age: params["age"], password_digest: params["password_digest"], city: City.find(params["city"])) # avec xxx qui sont les données obtenues à partir du formulaire
+        @user = User.new(name: params["name"], email: params["email"], password: params["password"]) # avec xxx qui sont les données obtenues à partir du formulaire
       
         if @user.save # essaie de sauvegarder en base @gossip
           # si ça marche, il redirige vers la page d'index du site

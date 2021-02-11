@@ -2,11 +2,7 @@
 <p>Bienvenue sur le profil du User No<%= params[:id] %> !! <br> Check ses infos :</p>
 
 <p>
-  Son ptit prénom : <%= User.find(params[:id]).first_name %><br/>
-  Son petit nom :  <%= User.find(params[:id]).last_name %><br/>
-  Son age :  <%= User.find(params[:id]).age %> ans<br/>
-  Sa ville : <a href="/city/<%= User.find(params[:id]).city_id%>"><%= User.find(params[:id]).city.city %></a><br/>
-
+  Son ptit nom : <%= User.find(params[:id]).name %><br/>
   Et son petit mail : <%= User.find(params[:id]).email %><br/>
   </p>
 

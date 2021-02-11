@@ -10,7 +10,7 @@ User.destroy_all
 
 require 'faker'
 10.times do |f|
-  users = User.create!(last_name: Faker::Name.first_name, first_name: Faker::Games::Pokemon.name, age: Faker::Number.between(from: 17, to: 50), email: Faker::Internet.email)
+  users = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password_digest: Faker::Name.name)
   gossips = Gossip.create!(title: Faker::Games::Pokemon.name, content: Faker::Restaurant.description, user: User.find(f+1))
   gossips = Gossip.create!(title: Faker::Games::Pokemon.name, content: Faker::Restaurant.description, user: User.find(f+1))
 end

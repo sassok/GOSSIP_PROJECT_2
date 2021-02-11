@@ -11,7 +11,7 @@
     <div class="card w-50">
     <div class="card-body">
       <h5 class="card-title">Potin n° <%= gossip.id %><br/></h5>
-      <p class="card-text">Son auteur :  <%= gossip.user.first_name %><br/></p>
+      <p class="card-text">Son auteur :  <%= gossip.user.name %><br/></p>
       <p class="card-text">Son titre :  <%= gossip.title %><br/><br/></p>
       <a href="/gossips/<%= gossip.id %>" class="btn btn-primary">Viens voir ce Gossip de plus près !</a>
     </div>

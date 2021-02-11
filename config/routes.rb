@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'city/:id', to: 'city#show'
 
   resources :gossips, only: [:new, :create, :edit, :update, :destroy]  
   resources :user, only: [:new, :create, :login]
