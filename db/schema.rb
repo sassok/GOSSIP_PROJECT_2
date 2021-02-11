@@ -22,10 +22,8 @@ ActiveRecord::Schema.define(version: 2021_02_10_110350) do
     t.string "title"
     t.text "content"
     t.integer "user_id"
-    t.integer "user_city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_city_id"], name: "index_gossips_on_user_city_id"
     t.index ["user_id"], name: "index_gossips_on_user_id"
   end
 
@@ -35,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_02_10_110350) do
     t.string "description"
     t.string "email"
     t.integer "age"
+    t.string "password_digest"
     t.integer "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
