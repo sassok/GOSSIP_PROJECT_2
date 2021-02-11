@@ -24,6 +24,8 @@
       <a class="nav-item nav-link" href="/sessions/new">Login</a>
       <a class="nav-item nav-link" href="/user/new">Inscription</a>
 
+      <a class="navbar-brand" <%= link_to "Se déconnecter", session_path(session.id), method: :delete %></a>
+
       
     </div>
   </div>
